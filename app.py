@@ -2,7 +2,7 @@ import requests, lxml.html
 from bs4 import BeautifulSoup
 from flask import Flask
 from flask import render_template
-from flask import  request
+from flask import request
 
 class Discipline:
     def __init__(self, name, status, score):
@@ -90,4 +90,4 @@ def get_score():
     do_all_stuff(username, password)
     return render_template("score.html", disciplines=disciplines)
 
-app.run(use_reloader=True)
+app.run()
