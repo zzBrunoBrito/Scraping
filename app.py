@@ -90,4 +90,4 @@ def get_score():
     do_all_stuff(username, password)
     return render_template("score.html", disciplines=disciplines)
 
-app.run()
+#app.run()
