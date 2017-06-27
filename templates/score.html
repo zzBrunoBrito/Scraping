@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    td {
+        padding: 10px;
+    }
+</style>
+
+<body>
+<table>
+    <tr>
+        <td><b>Disciplina</b></td>
+        <td><b>Situação</b></td>
+        <td></td>
+        <td></td>
+        <td><b>Notas</b></td>
+    </tr>
+
+    {% for dis in disciplines %}
+    <tr>
+        <td>{{dis.name}}</td>
+        <td>{{dis.status}}</td>
+        {% for score in dis.score %}
+            {% if score != '\xa0'%}
+                <td>{{score}}</td>
+            {% else %}
+                <td>0,00</td>
+            {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>
