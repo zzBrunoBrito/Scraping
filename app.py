@@ -10,7 +10,7 @@ class Discipline:
         self.status = status
         self.score = score
 
-disciplines = []
+
 
 def get_hidden_fields(response):
     page_html = lxml.html.fromstring(response.text)
@@ -22,6 +22,8 @@ def do_all_stuff(username, password):
     LOGIN_URL = 'http://187.19.195.156/corpore.net/Login.aspx'
     CONTEXT_URL = 'http://187.19.195.156/Corpore.Net/Source/Edu-Educacional/RM.EDU.CONTEXTO/EduSelecionarContextoModalWebForm.aspx?Qs=SelectedMenuIDKey%3dMainEducacional'
     SCORE_URL = 'http://187.19.195.156/Corpore.Net/Source/Edu-Educacional/RM.EDU.CONTEXTO/EduSelecionarContextoModalWebForm.aspx?Qs=ActionID%3dEduNotaEtapaActionWeb%26SelectedMenuIDKey%3dmnNotasEtapa'
+
+    disciplines = []
 
     session = requests.session()
 
@@ -69,6 +71,7 @@ def do_all_stuff(username, password):
                 row.findChildren('td')[8].text, row.findChildren('td')[9].text
         disciplines.append(Discipline(name, status, score))
 
+    return disciplines
 
 
 app = Flask(__name__.split('.')[0])
@@ -82,12 +85,9 @@ def get_score():
     username = request.form.get("username")
     password = request.form.get("password")
 
-    print(username)
-    print(password)
-
     #username = "201519019"
     #password = "System.out"
-    do_all_stuff(username, password)
-    return render_template("score.html", disciplines=disciplines)
 
-#app.run()
+    return render_template("score.html", disciplines=do_all_stuff(username, password))
+
+app.run()
