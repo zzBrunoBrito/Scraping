@@ -108,9 +108,9 @@ def get_score():
     # username = "201519019"
     # password = "System.out"
 
-    # return render_template("score.html", disciplines=do_all_stuff(username, password))
-    disciplines = do_all_stuff(username, password)
-    return jsonify([dis.serialize() for dis in disciplines])
+    return render_template("score.html", disciplines=do_all_stuff(username, password))
+    #disciplines = do_all_stuff(username, password)
+    #return jsonify([dis.serialize() for dis in disciplines])
 
 
 if __name__ == '__main__':
