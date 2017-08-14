@@ -24,7 +24,7 @@ class Discipline:
 # Cookie: _ga=GA1.2.406708436.1498888342; _gid=GA1.2.184563253.1498888342; _icl_visitor_lang_js=en-us; _mkto_trk=id:398-IBA-570&token:_mch-voxy.com-1498888349177-98776; my_language=en; sessionid=3rsoz2jf3i3n47egzbbv2fypyziwt3f8; SnapABugRef=https%3A%2F%2Fapp.voxy.com%2Fgo%2Flogin%20https%3A%2F%2Fvoxy.com%2F; SnapABugHistory=1#; SnapABugVisit=1#1498888355; SnapABugChatWindow=%7C0%7C-1%2C0%2C-1%2C0; __utma=173626660.406708436.1498888342.1498888356.1498888356.1; __utmb=173626660.1.10.1498888356; __utmc=173626660; __utmz=173626660.1498888356.1.1.utmcsr=voxy.com|utmccn=(referral)|utmcmd=referral|utmcct=/; __utmt=1
 
 s = requests.session()
-s.cookies()
+#s.cookies()
 
 
 def get_hidden_fields(response):
