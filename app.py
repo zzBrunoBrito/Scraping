@@ -94,6 +94,7 @@ def do_all_stuff(username, password):
 app = Flask(__name__.split('.')[0])
 
 
+
 @app.route("/")
 def main():
     return render_template("home.html")
