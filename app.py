@@ -105,6 +105,7 @@ def main():
 
 @app.route("/getscore", methods=["POST"])
 def get_score():
+
     username = request.form.get("username")
     password = request.form.get("password")
 
